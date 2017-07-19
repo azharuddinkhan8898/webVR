@@ -1,0 +1,32 @@
+$bg-color: #000000;
+
+.startbtn {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $bg-color;
+  opacity: 1;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.startVR:hover {
+  background: #eeeeee;
+}
+
+.startVR {
+  width: 100px;
+  height: 50px;
+  background: #ffffff;
+  text-align: center;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  opacity: 1;
+  margin-left: -50px;
+  margin-top: -25px;
+  font-weight: bold;
+  border-radius: 3px;
+}

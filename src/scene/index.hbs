@@ -1,0 +1,135 @@
+<div class="startbtn">
+    <div class="startVR">
+      <p>Start VR</p>
+    </div>
+</div>
+
+<a-scene id="aframe-project">
+	<a-assets>
+    <img id="groundTexture" src="assets/images/floor.jpg">
+    <a-asset-item id="sky" src="assets/images/sky1.jpg"></a-asset-item>
+    <a-asset-item id="skysphere" src="assets/images/sky.jpg"></a-asset-item>
+    <a-asset-item id="boxing" src="assets/models/boxingbag/model.dae"></a-asset-item>
+    
+    <video id="uniSplash" src="assets/video/splash_screen.mp4" autoplay webkit-playsinline playsinline></video>
+    <video id="screen1" src="assets/video/screen01.mp4" autoplay webkit-playsinline playsinline></video>
+    <img id="playbutton" src="assets/images/play-button (1).png"></img>
+    <img src="assets/images/startbutton.jpg" id="startbutton"></img>
+    <img src="assets/models/boxingbag/model/Heavy_bag.jpg" id="boxingimg"></img>
+    <img src="assets/images/bwg.png" id="bg2"></img>
+    <img src="assets/images/bg3.png" id="bg3"></img>
+    <audio id="audio_screen1" src="assets/audio/screen1.mp3" preload="auto"></audio>
+    <img id="play" src="assets/images/play-button (2).png"></img>
+    <img id="pause" src="assets/images/pause-button.png"></img>
+    <img id="left" src="assets/images/arrowhead-thin-outline-to-the-left.jpg"></img>
+    <img id="right" src="assets/images/arrow-point-to-right.jpg"></img>
+    <img id="optionarrow" src="assets/images/icon.jpg"></img>
+    <img id="optionarrow1" src="assets/images/icon_black.jpg"></img>
+  </a-assets>
+  <a-cylinder class="opacityanime" opacity="0" static-body id="ground" radius="50" color="#ef3024" position="0 0 0" height="0.1"></a-cylinder>
+
+  <!-- <a-entity camera look-controls class="camera1" position="0 0 0" rotation="0 0 0"></a-entity> -->
+  <a-camera camera="userHeight:1.96" class="camera1" rotation="0 0 0" position="0 0 0" zoom="1">
+    <a-cursor></a-cursor>
+  </a-camera>
+  <!-- <a-light type="point" color="#ffffff" position="0 3.250 -5.882" visible="true"></a-light> -->
+  <!-- <a-box static-body id="hinge" height="0.1" width="1" depth="1" position="0 2.8 -9"></a-box>
+  <a-box static-body click-drag height="0.5" width="0.5" depth="0.5" position="2 2.5 -9"></a-box> -->
+  <!-- <a-plane dynamic-body="mass:0.5" height="2" width="2" material="side:double" rotation="90 0 0" position="0 2.2 -9"></a-plane> -->
+  <!-- <a-cylinder linearDamping="0.05" constraint="target: #hinge; type:pointToPoint; pivot:0 1 0" dynamic-body="mass:30" height="1.5" radius="0.3" rotation="0 90 0" position="0 1.8 -9" material="src:#boxingimg"></a-cylinder> -->
+  <!-- <a-sphere id="clickDrag" dynamic-body radius="1.25" class="Atomato" color="tomato" position="3 2 -3.415" click-drag></a-sphere> -->
+  
+  <a-box src="#bg3" id="wall1" height="4" depth="0.2" width="8" position="4.1 2 0" rotation="0 90 0" class="opacityanime" opacity="0">
+    <a-plane id="question1" position="0 0.5 -0.3" rotation="0 180 0" color="#000000" opacity="0.5" height="2.5" width="4.5">
+      <a-entity text="value:How many people use Unilever brand \n everyday?; color:#ffffff; width:5; align:left; side:double" position="0.605 0.869 0.01" rotation="0 0 0"></a-entity>
+      <a-entity id="options1" position="-1.091 -0.721 0.1">
+        <a-plane class="options" position="0 0.921 0" height="0.3" width="1.5" color="#ef3024">
+          <a-entity text="value:a) 2 billions; color:#ffffff; width:3.5; align:left" position="1.122 0 0" rotation="0 0 0"></a-entity>
+          <a-image class="optionarrow" src="#optionarrow" scale="0.3 0.3 0.3" position="0.888 0 0.002"></a-image>
+        </a-plane>
+        <a-plane class="options" position="0 0.453 0" height="0.3" width="1.5" color="#ef3024">
+          <a-entity text="value:b) 1 billions; color:#ffffff; width:3.5; align:left" position="1.122 0 0" rotation="0 0 0"></a-entity>
+          <a-image class="optionarrow" src="#optionarrow" scale="0.3 0.3 0.3" position="0.888 0 0.002"></a-image>
+        </a-plane>
+        <a-plane class="options" position="0 0 0" height="0.3" width="1.5" color="#ef3024">
+          <a-entity text="value:c) 1.5 billions; color:#ffffff; width:3.5; align:left" position="1.122 0 0" rotation="0 0 0"></a-entity>
+          <a-image class="optionarrow" src="#optionarrow" scale="0.3 0.3 0.3" position="0.888 0 0.002"></a-image>
+        </a-plane>
+      </a-entity>
+    </a-plane>
+  </a-box>
+  <a-box src="#bg3" id="wall2" height="4" depth="0.2" width="8" position="-4.1 2 0" rotation="0 90 0" class="opacityanime" opacity="0"></a-box>
+  <a-box src="#bg2" id="wall3" height="4" depth="0.2" width="8" position="0 2 4.1" rotation="0 0 0" class="opacityanime" opacity="0">
+    <a-sphere class="opacityanime" id="goToNextWorld" opacity='0' radius='0.1' material='sphericalEnvMap:#skysphere;roughness:0; metalness:1;color:#ffffff' position='3.202 0.773 -0.483' scale='3 3 3'></a-sphere>
+  </a-box>
+  <!-- <a-plane class="opacityanime" opacity="0" material="src:#sky" height="8" width="8" position="0 4 0" rotation="90 0 0"></a-plane> -->
+  <!-- <a-box color="#95a5a6" color="#ef3024" id="wall4" height="2" depth="0.2" width="4" position="0 1.1 -2" rotation="0 0 0" class="opacityanime" opacity="0"></a-box> -->
+  <a-image id="playbtn" src="#playbutton" scale="1 1 1" position="0 2 -3.9">
+    <!-- <a-entity text="value:3; align:center; width:10;" material="color:#ffffff"></a-entity> -->
+  </a-image>
+  <!-- <a-entity position="0 15 0" rotation="0 0 180" particle-system="accelerationValue:0 0.5 0;accelerationSpread:5 0 5; color: #EF0000,#44CC00; particleCount:500; maxParticleCount:10000; "></a-entity> -->
+  <a-video id="video1" src="#uniSplash" autoplay="false" height="4" width="8" position="0 2 -4" rotation="0 0 0">
+    <a-image visible="false" castShadows="true" opacity="0" id="startbtn" src="#startbutton" scale="2 0.6 1" position="0.048 -0.798 0.01">
+    </a-image>
+  </a-video>
+  <a-video sound="src: #audio_screen1; on:video2Started; volume:3" id="video2" visible="false" src="#screen1" autoplay="false" height="4" width="8" position="0 2 -4" rotation="0 0 0">
+    <a-plane height="0.5" width="8" material="shader:sdf" opacity="0" position="0 -1.7 0.002" rotation="0 0 0">
+      <a-entity layout="type: line; margin: 0.6" position="3 0.08 0">
+        <a-image opacity="0.3" id="leftbtn" scale="0.5 0.5 0.5" color="#ffffff" src="#left"></a-image>
+        <a-image opacity="0.3" id="rightbtn" scale="0.5 0.5 0.5" color="#ffffff" src="#right"></a-image>
+      </a-entity>
+      <!-- <a-entity layout="type: line; margin: 2" position="0 0 0.1">
+        <a-plane color="black" scale="0.5 0.5 0.5" src="#play" position="0 0 0"></a-plane>
+        <a-plane color="black" scale="0.5 0.5 0.5" src="#pause" position="2 0 0"></a-plane>
+      </a-entity> -->
+    </a-plane>
+  </a-video>
+  <a-light id="light1" type="point" color="#ffffff" position="0 1.1 0" visible="true"></a-light>
+  <a-sky src="#sky" class="opacityanime" opacity="0" radius="50" theta-length="90"></a-sky>
+  <a-sphere src="#skysphere" position="0 100 0" material="side:double" radius="20">
+    <a-light id="light2" type="hemisphere" color="#ffffff" position="0 0 0" visible="false"></a-light>
+    <a-entity class="sphere_div" position="0 0 0">
+    </a-entity>
+  </a-sphere>
+
+<!-- <a-assets>
+  <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+  <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+  <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+  <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+  <a-asset-item id="dawningFont" src="fonts/dawningOfANewDayRegular.typeface.json"></a-asset-item>
+  <a-asset-item id="exoFont" src="fonts/exo2Black.typeface.json"></a-asset-item>
+  <a-asset-item id="exoItalicFont" src="fonts/exo2BlackItalic.typeface.json"></a-asset-item>
+</a-assets>
+
+<a-entity scale="2 2 2" geometry="primitive: torusKnot" position="0 6 -10" material="color: magenta; metalness:1; roughness: 0.1; sphericalEnvMap: #sky;">
+  <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+</a-entity>
+
+<a-entity position="-3 1 -6" rotation="5 0 0">
+  <a-entity
+    rotation="0 0 5"
+    position="0 2 0.2"
+    text-geometry="value: Virtual Reality; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
+    material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"
+  ></a-entity>
+
+  <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1" text-geometry="value: MRCC DEMO; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+
+  <a-entity position="1 0 0.3" text-geometry="value: Aesthetic; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0;"
+            material="shader: flat; color: white"></a-entity>
+  <a-entity position="1 0 0.3" text-geometry="value: Aesthetic; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0; bevelEnabled: true; bevelSize: 0.04; bevelThickness: 0.04; curveSegments: 1"
+            material="shader: flat; color: white; transparent: true; opacity: 0.4"></a-entity>
+</a-entity>
+
+<a-entity
+  geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+  material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
+
+<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+<a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+<a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+<a-entity light="color: white; type: ambient;"></a-entity>
+
+<a-sky src="#sky" rotation="0 -90 0"></a-sky> -->
+</a-scene>
